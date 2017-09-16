@@ -8,8 +8,6 @@
 #define MAX_PATH 260
 #endif
 
-#define DLL_NAME "MY_DLL_NAME.dll"
-
 DWORD Process(char const *ProcessName)
 {
     HANDLE hPID = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
@@ -60,10 +58,6 @@ int main()
 
     std::string folder;
     auto executable_name = get_last_node(path, folder);
-    std::cout << executable_name << "\n";
-    std::cout << folder << "\n";
-    std::cin.get();
-    return 0;
     DWORD dwProcess;
     char myDLL[MAX_PATH];
     /* strncpy(myDLL, dll_path.c_str(), sizeof(myDLL));
